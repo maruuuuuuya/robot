@@ -1,0 +1,8 @@
+<launch>
+    <!-- IMUの起動 -->
+    <include file="$(find handsfree_ros_imu)/launch/handsfree_imu.launch" />
+
+    <!-- IMUの動き検知スクリプトを起動 -->
+    <node pkg="robot_control" type="imu_motion_detector.py" name="imu_motion_detector" output="screen" />
+</launch>
+
