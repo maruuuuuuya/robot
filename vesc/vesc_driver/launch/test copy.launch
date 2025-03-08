@@ -1,0 +1,24 @@
+<launch>
+  <group ns="VESCLEFT">
+    <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver_node1" output="screen">
+      <param name="port" value="/dev/VESCLEFT" />
+      <param name="num_motor_pole_pairs" value="15" />
+    </node>
+  </group>
+  <group ns="VESCRIGHT">
+    <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver_node2" output="screen">
+      <param name="port" value="/dev/VESCRIGHT" />
+      <param name="num_motor_pole_pairs" value="15" />
+    </node>
+  </group>
+
+  <group ns="IMU">
+    <node pkg="vesc_driver" type="vesc_driver_node" name="vesc_driver_node3" output="screen">
+      <param name="port" value="/dev/IMU" />
+      <param name="num_motor_pole_pairs" value="15" />
+    </node>
+  </group>
+
+  <node pkg="vesc_driver" type="twist_to_rpm.py" name="twist_to_rpm" output="screen">
+  </node>
+</launch>
