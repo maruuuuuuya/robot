@@ -1,0 +1,10 @@
+<launch>
+    <!-- IMUのlaunchファイルを起動 -->
+    <include file="$(find handsfree_ros_imu)/launch/handsfree_imu.launch"/>
+
+    <!-- LiDARのlaunchファイルを起動 -->
+    <include file="$(find rplidar_ros)/launch/rplidar_a2m12.launch"/>
+
+    <!-- VESCのlaunchファイルを起動 -->
+    <include file="$(find vesc_driver)/launch/test.launch"/>
+</launch>
